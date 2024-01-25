@@ -292,8 +292,6 @@ main {
 
 
 
-
-
 /*-----------------------------------*\
   #SIDEBAR
 \*-----------------------------------*/
@@ -424,7 +422,7 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
+  font-size: 30px;
 }
 
 
@@ -746,7 +744,7 @@ main {
 
 
 /*-----------------------------------*\
-  #RESUME
+  #EXPERIENCE
 \*-----------------------------------*/
 
 .article-title { margin-bottom: 30px; }
@@ -775,9 +773,21 @@ main {
 .timeline-item:not(:last-child) { margin-bottom: 20px; }
 
 .timeline-item-title {
-  font-size: 20;
+  font-size: 20px;
   line-height: 1.3;
   margin-bottom: 7px;
+}
+
+.timeline-bullet-points {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.timeline-bullet-points li::before {
+    content: '\2022'; /* Unicode character for bullet point */
+    color: #ffea00; /* Yellow color */
+    font-size: 1.2em; /* Adjust font size as needed */
+    margin-right: 0.5em; /* Add some space between bullet point and text */
 }
 
 .timeline-list span {
@@ -818,6 +828,29 @@ main {
     color: var(--light-gray);
     font-weight: bold;
     line-height: 1.6;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow skills to wrap to the next line if there's not enough space */
+}
+
+.skills-item {
+    margin-right: 10px; /* Adjust spacing between skills horizontally */
+    margin-bottom: 10px; /* Adjust spacing between skills vertically */
+}
+
+.skill-pill {
+    background-color: var(--smoky-black);
+    color: var(--white-1);
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.skill-pill:hover {
+    filter: brightness(1.2);
+    transition: filter var(--transition-1);
 }
 
 
@@ -1320,13 +1353,17 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 180px;
+    max-height: 190px;
     margin-bottom: 30px;
+    width: 400px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { 
+    max-height: 584px; 
+    width: 800px
+  }
 
-  .sidebar-info { gap: 25px; }
+  .sidebar-info { gap: 20px; }
 
   .avatar-box { border-radius: 30px; }
 
