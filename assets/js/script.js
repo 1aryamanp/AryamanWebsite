@@ -157,4 +157,27 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    const viewPdfButton = document.getElementById('viewPdfButton');
+
+    if (!viewPdfButton) {
+        console.error('The PDF view button was not found.');
+        return;
+    }
+
+    viewPdfButton.addEventListener('click', function () {
+        const pdfPath = './assets/images/AryamanPatelResume.pdf';
+        window.open(pdfPath, '_blank');
+    });
+
+    viewRec.addEventListener('click', function () {
+        const pdfPath = './assets/images/Bandhealth.pdf';
+        window.open(pdfPath, '_blank');
+    });
+
+    viewAWS.addEventListener('click', function () {
+        const pdfPath = './assets/images/AryamanPatelResume.pdf';
+        window.open(pdfPath, '_blank');
+    });
+});
 

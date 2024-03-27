@@ -459,7 +459,7 @@ main {
 
 .navbar-link {
   color: var(--light-gray);
-  font-size: var(--fs-8);
+  font-size: var(--fs-100);
   padding: 20px 7px;
   transition: color var(--transition-1);
 }
@@ -708,39 +708,59 @@ main {
  * #clients 
  */
 
-.clients { margin-bottom: 15px; }
+.clients {
+    margin-bottom: 1px;
+}
+
+.clients-head {
+    /* Other styles... */
+    margin-top: 15px; /* or reduce this value as needed */
+    margin-bottom: 0px !important; /* reduce the bottom margin */
+}
 
 .clients-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 -1px; /* Adjust if needed */
+    padding: 2px;
+    padding-bottom: 2px;
+    padding-top: !important;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 2px;
+    margin-top: 0px !important;
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+    /*flex: 0 0 auto; /* Don't grow, don't shrink, basis is auto */
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 15px; /* Consistent right margin for each item */
+    height: 350px; /* Fixed height for container */
+}
+
+
+.clients-item:last-child {
+    margin-right: 0; /* Remove right margin for the last item */
 }
 
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
+    height: 375px; /* Image takes full height of the container */
+    width: 150px; /* Width adjusts according to aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    object-position: center; /* Center the image within the item */
+    filter: grayscale(1);
+    transition: var(--transition-1);
 }
 
-.clients-item img:hover { filter: grayscale(0); }
-
-
-
-
+.clients-item img:hover {
+    filter: grayscale(0);
+}
 
 /*-----------------------------------*\
   #EXPERIENCE
@@ -857,38 +877,47 @@ main {
  * skills 
  */
 
-.skills-title { margin-bottom: 20px; }
-
-.skills-list { padding: 20px; }
-
-
-.skills-item:not(:last-child) { margin-bottom: 15px; }
-
-.skill .title-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 8px;
+.skills-title {
+    margin-bottom: 20px;
+    color: var(--white-1); /* Assuming you have this color defined as white */
 }
 
-.skill .title-wrapper data {
-  color: var(--light-gray);
-  font-size: var(--fs-7);
-  font-weight: var(--fw-300);
+.skills-category {
+    background-color: var(--smoky-black); /* Assuming you have this color defined as a dark color */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 8px;
-  border-radius: 10px;
+.skills-category h4 {
+    margin: 0;
+    color: var(--white-1);
+    margin-bottom: 10px;
 }
 
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
-  border-radius: inherit;
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+.skills-item {
+    display: inline-block; /* Display list items inline-block for proper spacing */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-pill {
+    background-color: #636363; /* Dark grey background */
+    color: var(--white-1); /* White text color */
+    padding: 8px 16px; /* Padding */
+    border-radius: 15px; /* Slightly rounded corners for a 'boxy' look */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    font-size: 0.8em; /* Adjust font size if necessary */
+}
+
+
 
 
 
