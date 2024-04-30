@@ -174,6 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const pdfPath = './assets/images/Bandhealth.pdf';
         window.open(pdfPath, '_blank');
     });
+    viewRec.addEventListener('click', function () {
+        const pdfPath = './assets/images/RUSCA.pdf';
+        window.open(pdfPath, '_blank');
+    });
 
     viewAWS.addEventListener('click', function () {
         const pdfPath = './assets/images/AryamanPatelResume.pdf';
